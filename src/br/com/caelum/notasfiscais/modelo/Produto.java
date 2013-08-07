@@ -4,13 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Produto {
 	@Id @GeneratedValue
 	private Long id;
-
+	@NotEmpty(message="Produto deve ter nome valido")
 	private String nome;
-
+	@NotEmpty
 	private String descricao;
 
 	private Double preco;

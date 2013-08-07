@@ -249,3 +249,7 @@ table.dados tr td{
 	font-size: x-large;
 	width: 100%;
 }
+
+.erro{
+	color: #C22;
+}

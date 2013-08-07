@@ -13,16 +13,28 @@
 				rendered="#{not empty produtoBean.produto.id}" styleClass="titulo" />
 
 			<fieldset>
-				<legend>Dados do Produto</legend>
+			<legend>Dados do Produto</legend>
+			<h:panelGrid columns="3">
+
 				<h:outputLabel value="Nome" for="nome" />
-				<h:inputText id="nome" value="#{produtoBean.produto.nome}" />
+				<h:inputText id="nome" value="#{produtoBean.produto.nome}" >
+					<f:validator validatorId="#{comecaComMaiuscula}"/>
+				</h:inputText>
+				<h:message for="nome"/>
 
 				<h:outputLabel value="Decricao" for="descricao" />
 				<h:inputText id="descricao" value="#{produtoBean.produto.descricao}" />
-
+				<h:message for="descricao"/>
+				
+				
 				<h:outputLabel value="Preco" for="preco" />
-				<h:inputText id="preco" value="#{produtoBean.produto.preco}" />
-
+				<h:inputText id="preco" value="#{produtoBean.produto.preco}"
+					required="true" requiredMessage="Preco obigatorio"
+					validatorMessage="O valor minimo e 0,50">
+					<f:validateDoubleRange minimum="0.50" />
+				</h:inputText>
+				<h:message for="preco"/>
+				
 				<h:commandButton value="Gravar" action="#{produtoBean.grava}">
 					<f:ajax render="@form :formLista" execute="@form" />
 				</h:commandButton>
@@ -31,7 +43,7 @@
 					rendered="#{not empty produtoBean.produto.id}">
 					<f:ajax render="@form" />
 				</h:commandButton>
-				
+			</h:panelGrid>
 			</fieldset>
 		</h:form>
 		<h2>Listagem de Produtos</h2>

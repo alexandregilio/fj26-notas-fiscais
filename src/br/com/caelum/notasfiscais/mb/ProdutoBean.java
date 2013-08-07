@@ -14,7 +14,7 @@ public class ProdutoBean {
 
 	private Produto produto = new Produto();
 	private List<Produto> produtos;
-
+	
 	public Produto getProduto() {
 
 		return this.produto;
