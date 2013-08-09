@@ -18,7 +18,7 @@
 
 				<h:outputLabel value="Nome" for="nome" />
 				<h:inputText id="nome" value="#{produtoBean.produto.nome}" >
-					<f:validator validatorId="#{comecaComMaiuscula}"/>
+					<f:validator validatorId="comecaComMaiuscula"/>
 				</h:inputText>
 				<h:message for="nome"/>
 

@@ -1,1 +1,4 @@
 javax.validation.constraints.message.notnull
+
+
+//@PersistenceContext => somente em servidor de aplicacao container CDI
