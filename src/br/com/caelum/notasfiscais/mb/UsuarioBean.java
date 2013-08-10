@@ -1,11 +1,11 @@
 package br.com.caelum.notasfiscais.mb;
 
-import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
 import br.com.caelum.notasfiscais.dao.DAO;
 import br.com.caelum.notasfiscais.modelo.Usuario;
 
-@ManagedBean
+@Named
 public class UsuarioBean {
 
 	private Usuario usuario = new Usuario();
